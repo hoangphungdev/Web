@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Divs Side by Side - Resizable with Background Color</title>
+    <style>
+        body,
+        html {
+            margin: 10px;
+            margin-top: 30px;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .left-div,
+        .right-div {
+            border-radius: 5px;
+            border: 1px solid black;
+            overflow: hidden;
+            background-color: lightblue;
+            /* Màu nền cho hai div */
+        }
+
+        .divider {
+            cursor: ew-resize;
+            background-color: #ddd;
+            width: 5px;
+            flex: 0 0 auto;
+        }
+
+        #editor {
+            width: 80%;
+            height: 300px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            overflow-wrap: break-word;
+        }
+
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left-div" id="leftDiv">
+            <h2 th:text="'problem: ' + ${problem.name}"></h2>
+            <h4 th:text="'Description: ' + ${problem.description}"></h4>
+            <hr>
+            <p th:text="'Input example: ' + ${problem.sampleInput}"></p>
+            <p th:text="'Output example: ' + ${problem.sampleOutput}"></p>
+            <hr>
+        </div>
+        <div class="divider" id="divider"></div>
+        <div class="right-div" id="rightDiv">
+            <!-- Nội dung của div bên phải -->
+            <form action="/user/classes/detail/problem" method="post" enctype="multipart/form-data">
+                <input type="file" name="test" id="fileToUpload" accept=".cpp">
+                <input type="submit" value="Upload" name="submit">
+            </form>
+
+
+            <h2>Bene phải nè!</h2>
+            <div id="editor" contenteditable="true" spellcheck="false"></div>
+            <button onclick="formatCode()">Format Code</button>
+        </div>
+    </div>
+
+    <script>
+        const divider = document.getElementById('divider');
+        const leftDiv = document.getElementById('leftDiv');
+        const rightDiv = document.getElementById('rightDiv');
+        let isResizing = false;
+
+        divider.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            document.addEventListener('mousemove', resize);
+            document.addEventListener('mouseup', () => {
+                isResizing = false;
+                document.removeEventListener('mousemove', resize);
+            });
+        });
+
+        function resize(e) {
+            if (isResizing) {
+                const containerRect = leftDiv.parentElement.getBoundingClientRect();
+                const mouseX = e.clientX;
+                const dividerX = containerRect.left + leftDiv.offsetWidth;
+                const newLeftWidth = mouseX - containerRect.left;
+                const newRightWidth = containerRect.width - newLeftWidth;
+                leftDiv.style.width = ${ newLeftWidth } px;
+                rightDiv.style.width = ${ newRightWidth } px;
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

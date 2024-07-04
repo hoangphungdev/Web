@@ -1,0 +1,277 @@
+html,
+body {
+    margin: 0;
+}
+
+.container {
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+}
+
+
+
+.left_main {
+    background: #f2f1eb;
+    padding   : 10px;
+
+    font-family: Times;
+}
+
+.left_main h3 {
+    text-align   : center;
+    color        : red;
+    margin-top   : 5px;
+    margin-bottom: 10px;
+}
+
+.content_left {
+    width: 285px;
+}
+
+.content_left ul {
+    margin-top   : 0;
+    margin-bottom: 10px;
+    padding-left : 0;
+}
+
+.content_left ul li {
+    list-style-type: none;
+    position       : relative;
+    padding-left   : 10px;
+    display        : block;
+    font-size      : 15px;
+}
+
+.content_left ul li a {
+    display        : block;
+    text-decoration: none;
+    padding        : 5px 7px;
+    border-bottom  : 1px solid #ccc;
+    line-height    : 2;
+    font-size      : 1em !important;
+    color          : #337ab7;
+}
+
+.badge {
+    display         : inline-block;
+    min-width       : 10px;
+    padding         : 3px 7px;
+    font-size       : 12px;
+    font-weight     : 700;
+    line-height     : 1;
+    color           : #fff;
+    text-align      : center;
+    white-space     : nowrap;
+    vertical-align  : middle;
+    background-color: #777;
+    border-radius   : 10px;
+    background-color: red;
+}
+
+.content_right {
+    width: 80%;
+}
+
+
+.main_content_title h3 {
+    text-align: center;
+    color     : red;
+}
+
+.main_content_title hr {
+    border-top: 1px solid #eee;
+}
+
+.main_content .row {
+    display       : flex;
+    flex-direction: row;
+}
+
+.main_content .row_title h3 {
+    color: red;
+}
+
+.main_content .row_title hr {
+    line-height: 4px;
+    border     : 3px solid #FF9900;
+    width      : 97%;
+    margin     : 20px 0 20px 0;
+}
+
+.col-3 {
+    width  : 25%;
+    padding: 15px;
+}
+
+.col-4 {
+    width  : 33%;
+    padding: 15px;
+}
+
+.col-6 {
+    width  : 50%;
+    padding: 15px;
+}
+
+.normal_text {
+    font-size  : 17px;
+    font-family: Times;
+}
+
+.line_height {
+    line-height: 2em;
+}
+
+.avatar {
+    display         : inline-block;
+    max-width       : 65%;
+    height          : auto;
+    padding         : 4px;
+    line-height     : 1.42857143;
+    background-color: #fff;
+    border          : 1px solid #ddd;
+    border-radius   : 4px;
+    box-shadow      : 5px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.center {
+    text-align: center;
+}
+
+.image {
+    width         : 30px;
+    height        : 30px;
+    border-radius : 50%;
+    vertical-align: middle;
+}
+
+.info {
+    display: block;
+}
+
+.edit_info {
+    display: none;
+}
+
+.sub-menu {
+    display: none;
+}
+
+.site_map li:hover .sub-menu {
+    display: block;
+}
+
+.lessthan::before {
+    content: "> ";
+    color  : red;
+}
+
+.italic_text {
+    font-style: italic;
+}
+
+.content_right input[type="text"] {
+    width        : 80%;
+    margin       : 5px 0 5px 0;
+    height       : 17px;
+    outline      : none;
+    border       : 1px solid #303030;
+    border-bottom: 2px solid #9a9a9a;
+    padding-left : 5px;
+    padding-right: 5px;
+    border       : none;
+    border-bottom: 2px solid #ccc;
+}
+
+
+.content_right input[type="text"]:hover {
+    background-color: #ffffe5;
+}
+
+
+.content_right input[type="text"]:valid {
+    border       : none;
+    border-bottom: 2px solid #ccc;
+}
+
+.swap {
+    text-align      : center;
+    margin-left     : 10px;
+    background-color: white;
+    border-radius   : 5px;
+    border          : 1px solid gray;
+}
+
+
+.swap:hover {
+    background-color: #ffff80;
+}
+
+.row .col-6 button {
+    width        : 82%;
+    height       : 30px;
+    border       : 1px solid black;
+    border-radius: 5px;
+    cursor       : pointer;
+    margin       : 5px 0 5px 0;
+    color        : red;
+    font-size    : 18px;
+    font-weight  : bold;
+    font-family  : Times;
+}
+
+.row .col-6 button:hover {
+    background-color: #ffff80;
+}
+
+.edit_warning {
+    width        : 82%;
+    margin       : 5px 0 5px 0;
+    height       : 20px;
+    outline      : none;
+    border       : 1px solid #303030;
+    border-bottom: 2px solid #9a9a9a;
+    padding-left : 5px;
+    padding-right: 5px;
+    border       : none;
+    border-bottom: 2px solid #ccc;
+}
+
+.save_button {
+    margin-right  : 0;
+    flex-direction: row;
+    display       : flex;
+    margin-top    : auto;
+    margin-bottom : auto;
+    width         : auto;
+    width         : 70%;
+}
+
+.row_title_edit {
+    flex-direction: row;
+    display       : flex;
+}
+
+.button_col-3 button {
+    width        : 82%;
+    height       : 30px;
+    border       : 1px solid black;
+    border-radius: 5px;
+    cursor       : pointer;
+    margin       : 5px 0 5px 0;
+    color        : red;
+    font-size    : 18px;
+    font-weight  : bold;
+    font-family  : Times;
+}
+
+.button_col-3 {
+    width     : 33%;
+    padding   : 15px;
+    text-align: center;
+}
+
+.button_col-3 button:hover {
+    background-color: #ffff80;
+}

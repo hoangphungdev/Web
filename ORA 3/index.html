@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content_left">
+            <div class="left_main">
+                <h3>
+                    <img id="mini-avatar" class="image" src="image/image.png" alt="">
+                    PHÙNG MẠNH HOÀNG
+                </h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">
+                            Thư báo
+                            <span class="badge">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">Đổi mật khẩu</a>
+                    </li>
+                    <li>
+                        <a href="">Cấp lại mật khẩu Email trường</a>
+                    </li>
+                    <li>
+                        <a href="">Thoát đăng nhập</a>
+                    </li>
+                    <li>
+                        <a href="">Thông tin mật khẩu Email cấp mới</a>
+                    </li>
+                    <li>
+                        <a href="">Xác nhận khai báo y tế</a>
+                    </li>
+                </ul>
+            </div>
+
+            <br>
+            <div class="left_main">
+                <h3>QUẢN LÝ HỒ SƠ SINH VIÊN</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">Thông tin sinh viên</a>
+                    </li>
+                    <li>
+                        <a href="">Cập nhật thông tin cá nhân</a>
+                    </li>
+                    <li>
+                        <a href="">Thông tin lớp sinh viên</a>
+                    </li>
+                </ul>
+            </div>
+
+            <br>
+            <div class="left_main">
+                <h3>ĐÀO TẠO</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">Chương trình đào tạo</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Chương trình đào tạo sinh viên</a></li>
+                            <li><a href="">Danh mục học phần</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Kế hoạch học tập</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Kế hoạch học tập</a></li>
+                            <li><a href="">Thời khóa biểu</a></li>
+                            <li><a href="">Tra cứu đăng kí lớp các kỳ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Kết quả học tập</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Kết quả thi TOIEC</a></li>
+                            <li><a href="">Bảng điểm cá nhân</a></li>
+                            <li><a href="">Bảng điểm học phần</a></li>
+                            <li><a href="">Kiểm tra điểm nhập kì mới nhất</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Đồ án - Tốt nghiệp</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Kết quả xét nhận ĐATN</a></li>
+                            <li><a href="">Đăng ký xét tốt nghiệp</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Thời khóa biểu tạm thời</a>
+                    </li>
+                </ul>
+            </div>
+
+            <br>
+            <div class="left_main">
+                <h3>TƯ VẤN TRỰC TUYẾN</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">Hỏi đáp - Tư vấn trực tuyến</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="left_main">
+                <h3>TÀI CHÍNH HỌC VỤ</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">Thông tin công nợ học phí</a>
+                    </li>
+                    <li>
+                        <a href="">Thanh toán học phí trực tuyến</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="left_main">
+                <h3>DỊCH VỤ HÀNH CHÍNH</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">ĐK cấp giấy tờ</a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#btnExport").click(function () {
+                    var pdf = new jsPDF('p', 'pt', 'letter');
+                    pdf.addHTML($('#infoContainer')[0], function () {
+                        pdf.save('Test.pdf');
+                    });
+                });
+            });
+        </script>
+
+
+        <div class="content_right  info">
+            <div class="main_content_title">
+                <h3>THÔNG TIN CÁ NHÂN</h3>
+                <hr>
+            </div>
+            <div class="main_content" id="infoContainer">
+                <div class="group_item">
+                    <div class="row_title">
+                        <div class="info_Student">
+
+
+
+                            <span>
+                                <h3>THÔNG TIN SINH VIÊN_20215385</h3>
+                            </span>
+
+                            <span>
+                                <button onclick="addInfoItem(this)" class="swap normal_text">
+                                    <img src="image/edit.png" alt="edit-icon" style="width: 15px; ">
+                                    Thêm mục thông tin</button>
+                            </span>
+
+                            <span>
+                                <button onclick="addGroupItem()" class="swap normal_text">
+                                    <img src="image/edit.png" alt="edit-icon" style="width: 15px; ">
+                                    Thêm mục nhóm</button>
+                            </span>
+
+                            <span>
+                                <button class="swap normal_text" id="btnExport">
+                                    <img src="image/edit.png" alt="edit-icon" style="width: 15px; ">
+                                    Xuất ra PDF</button>
+                            </span>
+                        </div>
+                        <hr>
+                        <div class="row wrap">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

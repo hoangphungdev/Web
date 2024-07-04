@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        const TTSV_0 = {
+            avatar: "image.png",
+            mssv: 20215385,
+            name: "Phùng Mạnh Hoàng",
+            entryYear: 2021,
+            degree: "Đại học đại trà",
+            program: "Khoa học Máy tính 2021",
+            school: "Trường Công nghệ thông tin và Truyền thông",
+            studyStatus: "Học",
+            gender: "Nam",
+            class: "Khoa học máy tính 03-K66",
+            academicYear: 66,
+            mail: "hoang.pm215385@sis.hust.edu.vn",
+            semester: 20231,
+            cpa: 3.2,
+            debt: 0,
+            pass: 82,
+            level: 0,
+            warningLevel: "M0",
+            ethnicity: "KINH",
+            gradYear: 2021,
+            address: "XÃ PHẠM TRẤN, HUYỆN GIA LỘC, TỈNH HẢI DƯƠNG",
+            idNumber: "030***51",
+            placeOfIssue: "HẢI DƯƠNG",
+            fatherName: "PHÙNG DANH ÂU",
+            fatherBirthYear: 1977,
+            fatherJob: "BÍ THƯ ĐẢNG ỦY, CHỦ TỊCH HỘI ĐỒNG NHÂN DÂN XÃ",
+            fatherPhone: "098***59",
+            fatherEmail: "PH*@*IL.COM",
+            religion: "KHÔNG",
+            highschool: "ĐOÀN THƯỢNG - HẢI DƯƠNG",
+            residence: "XÃ PHẠM TRẤN, HUYỆN GIA LỘC, TỈNH HẢI DƯƠNG",
+            phone: "086***02",
+            motherName: "HOÀNG THỊ QUYÊN",
+            motherBirthYear: 1980,
+            motherJob: "CÔNG NHÂN",
+            motherPhone: "097***02",
+            motherEmail: "KHÔNG CÓ"
+        };
+
+        let TTSV = {
+            avatar: "image.png",
+            mssv: 20215385,
+            name: "Phùng Mạnh Hoàng",
+            entryYear: 2021,
+            degree: "Đại học đại trà",
+            program: "Khoa học Máy tính 2021",
+            school: "Trường Công nghệ thông tin và Truyền thông",
+            studyStatus: "Học",
+            gender: "Nam",
+            class: "Khoa học máy tính 03-K66",
+            academicYear: 66,
+            mail: "hoang.pm215385@sis.hust.edu.vn",
+            semester: 20231,
+            cpa: 3.2,
+            debt: 0,
+            pass: 82,
+            level: 0,
+            warningLevel: "M0",
+            ethnicity: "KINH",
+            gradYear: 2021,
+            address: "XÃ PHẠM TRẤN, HUYỆN GIA LỘC, TỈNH HẢI DƯƠNG",
+            idNumber: "030***51",
+            placeOfIssue: "HẢI DƯƠNG",
+            fatherName: "PHÙNG DANH ÂU",
+            fatherBirthYear: 1977,
+            fatherJob: "BÍ THƯ ĐẢNG ỦY, CHỦ TỊCH HỘI ĐỒNG NHÂN DÂN XÃ",
+            fatherPhone: "098***59",
+            fatherEmail: "PH*@*IL.COM",
+            religion: "KHÔNG",
+            highschool: "ĐOÀN THƯỢNG - HẢI DƯƠNG",
+            residence: "XÃ PHẠM TRẤN, HUYỆN GIA LỘC, TỈNH HẢI DƯƠNG",
+            phone: "086***02",
+            motherName: "HOÀNG THỊ QUYÊN",
+            motherBirthYear: 1980,
+            motherJob: "CÔNG NHÂN",
+            motherPhone: "097***02",
+            motherEmail: "KHÔNG CÓ"
+        };
+
+        function editInfo() {
+            document.querySelector(".content_right.info").style.display = "none";
+            document.querySelector(".content_right.edit_info").style.display = "block";
+        }
+
+        function cancelInfo() {
+            document.querySelector(".content_right.info").style.display = "block";
+            document.querySelector(".content_right.edit_info").style.display = "none";
+            console.log(TTSV);
+        }
+
+        function resetInfo() {
+            TTSV = TTSV_0;
+            document.getElementById("mini-avatar").src = TTSV_0.avatar;
+            document.getElementById("avatar").src = TTSV_0.avatar;
+            document.getElementById("mssv").textContent = TTSV_0.mssv;
+            document.getElementById("name").textContent = TTSV_0.name;
+            document.getElementById("entryYear").textContent = TTSV_0.entryYear;
+            document.getElementById("degree").textContent = TTSV_0.degree;
+            document.getElementById("program").textContent = TTSV_0.program;
+            document.getElementById("school").textContent = TTSV_0.school;
+            document.getElementById("studyStatus").textContent = TTSV_0.studyStatus;
+            document.getElementById("gender").textContent = TTSV_0.gender;
+            document.getElementById("class").textContent = TTSV_0.class;
+            document.getElementById("academicYear").textContent = TTSV_0.academicYear;
+            document.getElementById("email").textContent = TTSV_0.mail; // Chú ý đến phần này, `mail` chứ không phải `email` trong TTSV_0
+            document.getElementById("semester").textContent = TTSV_0.semester;
+            document.getElementById("cpa").textContent = TTSV_0.cpa;
+            document.getElementById("debt").textContent = TTSV_0.debt;
+            document.getElementById("pass").textContent = TTSV_0.pass;
+            document.getElementById("level").textContent = TTSV_0.level;
+            document.getElementById("warningLevel").textContent = TTSV_0.warningLevel;
+            document.getElementById("ethnicity").textContent = TTSV_0.ethnicity;
+            document.getElementById("gradYear").textContent = TTSV_0.gradYear;
+            document.getElementById("address").textContent = TTSV_0.address;
+            document.getElementById("idNumber").textContent = TTSV_0.idNumber;
+            document.getElementById("placeOfIssue").textContent = TTSV_0.placeOfIssue;
+            document.getElementById("fatherName").textContent = TTSV_0.fatherName;
+            document.getElementById("fatherBirthYear").textContent = TTSV_0.fatherBirthYear;
+            document.getElementById("fatherJob").textContent = TTSV_0.fatherJob;
+            document.getElementById("religion").textContent = TTSV_0.religion;
+            document.getElementById("highschool").textContent = TTSV_0.highschool;
+            document.getElementById("residence").textContent = TTSV_0.residence;
+            document.getElementById("phone").textContent = TTSV_0.phone;
+            document.getElementById("motherName").textContent = TTSV_0.motherName;
+            document.getElementById("motherBirthYear").textContent = TTSV_0.motherBirthYear;
+            document.getElementById("motherJob").textContent = TTSV_0.motherJob;
+            document.getElementById("fatherPhone").textContent = TTSV_0.fatherPhone;
+            document.getElementById("fatherEmail").textContent = TTSV_0.fatherEmail;
+            document.getElementById("motherPhone").textContent = TTSV_0.motherPhone;
+            document.getElementById("motherEmail").textContent = TTSV_0.motherEmail;
+
+
+            // Ẩn form chỉnh sửa và hiện thông tin cập nhật
+            document.querySelector(".content_right.info").style.display = "block";
+            document.querySelector(".content_right.edit_info").style.display = "none";
+
+            console.log(TTSV_0);
+
+
+        }
+
+        function saveInfo() {
+
+            TTSV = {
+                avatar: document.getElementById("edit-avatar").files[0],
+                mssv: document.getElementById("edit-mssv").value || TTSV_0.mssv,
+                name: document.getElementById("edit-name").value || TTSV_0.name,
+                entryYear: document.getElementById("edit-entry").value || TTSV_0.entryYear,
+                degree: document.getElementById("edit-degree").value || TTSV_0.degree,
+                program: document.getElementById("edit-program").value || TTSV_0.program,
+                school: document.getElementById("edit-school").value || TTSV_0.school,
+                studyStatus: document.getElementById("edit-status").value || TTSV_0.studyStatus,
+                gender: document.getElementById("edit-gender").value,
+                class: document.getElementById("edit-class").value || TTSV_0.class,
+                academicYear: document.getElementById("edit-academicYear").value || TTSV_0.academicYear,
+                mail: document.getElementById("edit-mail").value || TTSV_0.mail,
+                semester: document.getElementById("edit-semester").value || TTSV_0.semester,
+                cpa: document.getElementById("edit-cpa").value || TTSV_0.cpa,
+                debt: document.getElementById("edit-debt").value || TTSV_0.debt,
+                pass: document.getElementById("edit-pass").value || TTSV_0.pass,
+                level: document.getElementById("edit-level").value || TTSV_0.level,
+                warningLevel: document.getElementById("edit-warning").value || TTSV_0.warningLevel,
+                ethnicity: document.getElementById("edit-ethnicity").value || TTSV_0.ethnicity,
+                gradYear: document.getElementById("edit-gradYear").value || TTSV_0.gradYear,
+                address: document.getElementById("edit-address").value || TTSV_0.address,
+                idNumber: document.getElementById("edit-idNumber").value || TTSV_0.idNumber,
+                placeOfIssue: document.getElementById("edit-placeOfIssue").value || TTSV_0.placeOfIssue,
+                fatherName: document.getElementById("edit-fatherName").value || TTSV_0.fatherName,
+                fatherBirthYear: document.getElementById("edit-fatherBirthYear").value || TTSV_0.fatherBirthYear,
+                fatherJob: document.getElementById("edit-fatherJob").value || TTSV_0.fatherJob,
+                fatherPhone: document.getElementById("edit-fatherPhone").value || TTSV_0.fatherPhone,
+                fatherEmail: document.getElementById("edit-fatherEmail").value || TTSV_0.fatherEmail,
+                religion: document.getElementById("edit-religion").value || TTSV_0.religion,
+                highschool: document.getElementById("edit-highschool").value || TTSV_0.highschool,
+                residence: document.getElementById("edit-residence").value || TTSV_0.residence,
+                phone: document.getElementById("edit-phone").value || TTSV_0.phone,
+                motherName: document.getElementById("edit-motherName").value || TTSV_0.motherName,
+                motherBirthYear: document.getElementById("edit-motherBirthYear").value || TTSV_0.motherBirthYear,
+                motherJob: document.getElementById("edit-motherJob").value || TTSV_0.motherJob,
+                motherPhone: document.getElementById("edit-motherPhone").value || TTSV_0.motherPhone,
+                motherEmail: document.getElementById("edit-motherEmail").value || TTSV_0.motherEmail
+            };
+
+            let avatarURL;
+            if (TTSV.avatar != null) {
+                avatarURL = URL.createObjectURL(TTSV.avatar);
+            } else {
+                avatarURL = TTSV_0.avatar;
+            }
+
+
+            document.getElementById("mini-avatar").src = avatarURL;
+            document.getElementById("avatar").src = avatarURL;
+            document.getElementById("mssv").textContent = TTSV.mssv;
+            document.getElementById("name").textContent = TTSV.name;
+            document.getElementById("entryYear").textContent = TTSV.entryYear;
+            document.getElementById("degree").textContent = TTSV.degree;
+            document.getElementById("program").textContent = TTSV.program;
+            document.getElementById("school").textContent = TTSV.school;
+            document.getElementById("studyStatus").textContent = TTSV.studyStatus;
+            document.getElementById("gender").textContent = TTSV.gender;
+            document.getElementById("class").textContent = TTSV.class;
+            document.getElementById("academicYear").textContent = TTSV.academicYear;
+            document.getElementById("email").textContent = TTSV.mail; // Chú ý đến phần này, `mail` chứ không phải `email` trong TTSV
+            document.getElementById("semester").textContent = TTSV.semester;
+            document.getElementById("cpa").textContent = TTSV.cpa;
+            document.getElementById("debt").textContent = TTSV.debt;
+            document.getElementById("pass").textContent = TTSV.pass;
+            document.getElementById("level").textContent = TTSV.level;
+            document.getElementById("warningLevel").textContent = TTSV.warningLevel;
+            document.getElementById("ethnicity").textContent = TTSV.ethnicity;
+            document.getElementById("gradYear").textContent = TTSV.gradYear;
+            document.getElementById("address").textContent = TTSV.address;
+            document.getElementById("idNumber").textContent = TTSV.idNumber;
+            document.getElementById("placeOfIssue").textContent = TTSV.placeOfIssue;
+            document.getElementById("fatherName").textContent = TTSV.fatherName;
+            document.getElementById("fatherBirthYear").textContent = TTSV.fatherBirthYear;
+            document.getElementById("fatherJob").textContent = TTSV.fatherJob;
+            document.getElementById("religion").textContent = TTSV.religion;
+            document.getElementById("highschool").textContent = TTSV.highschool;
+            document.getElementById("residence").textContent = TTSV.residence;
+            document.getElementById("phone").textContent = TTSV.phone;
+            document.getElementById("motherName").textContent = TTSV.motherName;
+            document.getElementById("motherBirthYear").textContent = TTSV.motherBirthYear;
+            document.getElementById("motherJob").textContent = TTSV.motherJob;
+            document.getElementById("fatherPhone").textContent = TTSV.fatherPhone;
+            document.getElementById("fatherEmail").textContent = TTSV.fatherEmail;
+            document.getElementById("motherPhone").textContent = TTSV.motherPhone;
+            document.getElementById("motherEmail").textContent = TTSV.motherEmail;
+
+
+            // Ẩn form chỉnh sửa và hiện thông tin cập nhật
+            document.querySelector(".content_right.info").style.display = "block";
+            document.querySelector(".content_right.edit_info").style.display = "none";
+
+            console.log(TTSV);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content_left">
+            <div class="left_main">
+                <h3>
+                    <img id="mini-avatar" class="image" src="image.png" alt="">
+                    PHÙNG MẠNH HOÀNG
+                </h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">
+                            Thư báo
+                            <span class="badge">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">Đổi mật khẩu</a>
+                    </li>
+                    <li>
+                        <a href="">Cấp lại mật khẩu Email trường</a>
+                    </li>
+                    <li>
+                        <a href="">Thoát đăng nhập</a>
+                    </li>
+                    <li>
+                        <a href="">Thông tin mật khẩu Email cấp mới</a>
+                    </li>
+                    <li>
+                        <a href="">Xác nhận khai báo y tế</a>
+                    </li>
+                </ul>
+            </div>
+
+            <br>
+            <div class="left_main">
+                <h3>QUẢN LÝ HỒ SƠ SINH VIÊN</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">Thông tin sinh viên</a>
+                    </li>
+                    <li>
+                        <a href="">Cập nhật thông tin cá nhân</a>
+                    </li>
+                    <li>
+                        <a href="">Thông tin lớp sinh viên</a>
+                    </li>
+                </ul>
+            </div>
+
+            <br>
+            <div class="left_main">
+                <h3>ĐÀO TẠO</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">Chương trình đào tạo</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Chương trình đào tạo sinh viên</a></li>
+                            <li><a href="">Danh mục học phần</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Kế hoạch học tập</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Kế hoạch học tập</a></li>
+                            <li><a href="">Thời khóa biểu</a></li>
+                            <li><a href="">Tra cứu đăng kí lớp các kỳ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Kết quả học tập</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Kết quả thi TOIEC</a></li>
+                            <li><a href="">Bảng điểm cá nhân</a></li>
+                            <li><a href="">Bảng điểm học phần</a></li>
+                            <li><a href="">Kiểm tra điểm nhập kì mới nhất</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Đồ án - Tốt nghiệp</a>
+                        <ul class="sub-menu">
+                            <li><a href="">Kết quả xét nhận ĐATN</a></li>
+                            <li><a href="">Đăng ký xét tốt nghiệp</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">Thời khóa biểu tạm thời</a>
+                    </li>
+                </ul>
+            </div>
+
+            <br>
+            <div class="left_main">
+                <h3>TƯ VẤN TRỰC TUYẾN</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">Hỏi đáp - Tư vấn trực tuyến</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="left_main">
+                <h3>TÀI CHÍNH HỌC VỤ</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">Thông tin công nợ học phí</a>
+                    </li>
+                    <li>
+                        <a href="">Thanh toán học phí trực tuyến</a>
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="left_main">
+                <h3>DỊCH VỤ HÀNH CHÍNH</h3>
+                <ul class="site_map">
+                    <li>
+                        <a href="">ĐK cấp giấy tờ</a>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="content_right  info">
+            <div class="main_content_title">
+                <h3>THÔNG TIN CÁ NHÂN</h3>
+                <hr>
+            </div>
+            <div class="main_content">
+                <div class="row_title">
+                    <h3>THÔNG TIN SINH VIÊN
+                        <span>
+                            <button onclick="editInfo()" class="swap normal_text">
+                                <img src="edit.png" alt="edit-icon" style="width: 15px; ">
+                                Chỉnh sửa </button></span>
+                    </h3>
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <div class="center">
+                            <img class="avatar" id="avatar" src="image.png" alt="A man">
+                            <div><br /> <strong class="italic_text">MSSV:</strong>
+                                <span id="mssv">20215385</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 normal_text line_height">
+                        <strong class="italic_text">Họ và tên:&emsp;</strong>
+                        <span id="name">Phùng Mạnh Hoàng</span><br />
+                        <strong class="italic_text">Năm vào trường: &emsp;</strong>
+                        <span id="entryYear">2021</span><br />
+                        <strong class="italic_text">Bậc đào tạo: &emsp;</strong>
+                        <span id="degree">Đại học đại trà</span><br />
+                        <strong class="italic_text">Chương trình: &emsp;</strong>
+                        <span id="program">Khoa học Máy tính 2021</span><br />
+                        <strong class="italic_text">Khoa/Viện quản lý: &emsp;</strong>
+                        <span id="school">Trường Công nghệ thông tin và Truyền thông</span><br />
+                        <strong class="italic_text">Tình trạng học tập: &emsp;</strong>
+                        <span id="studyStatus">Học</span><br />
+                    </div>
+                    <div class="col-4 normal_text line_height">
+                        <strong class="italic_text">Giới tính: &emsp;</strong>
+                        <span id="gender">Nam</span><br />
+                        <strong class="italic_text">Lớp: &emsp;</strong>
+                        <span id="class">Khoa học máy tính 03-K66</span><br />
+                        <strong class="italic_text">Khóa học: &emsp;</strong>
+                        <span id="academicYear">66</span><br />
+                        <strong class="italic_text">Email: &emsp;</strong>
+                        <span id="email">hoang.pm215385@sis.hust.edu.vn</span><br />
+                    </div>
+                </div>
+                <div class="row_title">
+                    <h3>THÔNG TIN HỌC TẬP</h3>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 normal_text line_height">
+                        <strong class="italic_text">Tổng kết học kỳ: &emsp;</strong>
+                        <span id="semester">20231</span><br />
+                        <strong class="italic_text">Trung bình tích lũy: &emsp;</strong>
+                        <span id="cpa">3.2</span><br />
+                        <strong class="italic_text">Số TC nợ đăng ký: &emsp;</strong>
+                        <span id="debt">0</span><br />
+                    </div>
+                    <div class="col-6 normal_text line_height">
+                        <strong class="italic_text">Số TC tích lũy: &emsp;</strong>
+                        <span id="pass">82</span><br />
+                        <strong class="italic_text">Trình độ sinh viên: &emsp;</strong>
+                        <span id="level">3</span><br />
+                        <strong class="italic_text">Mức cảnh báo: &emsp;</strong>
+                        <span id="warningLevel">M0</span><br />
+                    </div>
+                </div>
+
+                <div class="row_title">
+                    <h3>THÔNG TIN CÁ NHÂN</h3>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 normal_text line_height">
+                        <strong class="italic_text">Dân tộc: &emsp;</strong>
+                        <span id="ethnicity">KINH</span><br />
+                        <strong class="italic_text">Năm TN cấp 3: &emsp;</strong>
+                        <span id="gradYear">2021</span><br />
+                        <strong class="italic_text">Địa chỉ: &emsp;</strong>
+                        <span id="address"> XÃ PHẠM TRẤN, HUYỆN GIA LỘC, TỈNH HẢI DƯƠNG</span><br />
+                        <strong class="italic_text">Số CMTND: &emsp;</strong>
+                        <span id="idNumber">030***51</span><br />
+                        <strong class="italic_text">Nơi cấp: &emsp;</strong>
+                        <span id="placeOfIssue">HẢI DƯƠNG</span><br />
+                        <strong class="italic_text">Họ tên bố: &emsp;</strong>
+                        <span id="fatherName">PHÙNG DANH ÂU</span><br />
+                        <strong class="italic_text">Năm sinh: &emsp;</strong>
+                        <span id="fatherBirthYear">1977</span><br />
+                        <strong class="italic_text">Nghề nghiệp: &emsp;</strong>
+                        <span id="fatherJob">BÍ THƯ ĐẢNG ỦY, CHỦ TỊCH HỘI ĐỒNG NHÂN DÂN XÃ</span><br />
+                        <strong class="italic_text">Điện thoại: &emsp;</strong>
+                        <span id="fatherPhone">098***59</span><br />
+                        <strong class="italic_text">Email: &emsp;</strong>
+                        <span id="fatherEmail">PH*@*IL.COM</span><br />
+                    </div>
+
+                    <div class="col-6 normal_text line_height">
+                        <strong class="italic_text">Tôn giáo: &emsp;</strong>
+                        <span id="religion">KHÔNG</span><br />
+                        <strong class="italic_text">Trường THPT: &emsp;</strong>
+                        <span id="highschool">ĐOÀN THƯỢNG - HẢI DƯƠNG</span><br />
+                        <strong class="italic_text">Hộ khẩu: &emsp;</strong>
+                        <span id="residence"> XÃ PHẠM TRẤN, HUYỆN GIA LỘC, TỈNH HẢI DƯƠNG</span><br />
+                        <strong class="italic_text">Số Điện thoại: &emsp;</strong>
+                        <span id="phone">086***02</span><br />
+                        <strong class="italic_text">Họ tên mẹ: &emsp;</strong>
+                        <span id="motherName">HOÀNG THỊ QUYÊN</span><br />
+                        <strong class="italic_text">Năm sinh: &emsp;</strong>
+                        <span id="motherBirthYear">1980</span><br />
+                        <strong class="italic_text">Nghề nghiệp: &emsp;</strong>
+                        <span id="motherJob">CÔNG NHÂN</span><br />
+                        <strong class="italic_text">Điện thoại: &emsp;</strong>
+                        <span id="motherPhone">097***02</span><br />
+                        <strong class="italic_text">Email: &emsp;</strong>
+                        <span id="motherEmail">KHÔNG CÓ</span><br />
+                    </div>
+                </div>
+
+                <div class="row normal_text line_height">
+                    <span><strong class="italic_text">Ghi chú:&emsp;</strong></span>
+                    <span>Nếu sinh viên thấy thông tin của mình chưa chính xác, xin vui
+                        lòng liên hệ phòng Đào tạo để cập nhật lại.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content_right edit_info">
+            <div class="main_content_title">
+                <h3>THÔNG TIN CÁ NHÂN</h3>
+                <hr>
+            </div>
+            <div class="main_content">
+                <div class="row_title">
+                    <div style="display: flex; flex-direction: row;">
+                        <div>
+                            <h3>THÔNG TIN SINH VIÊN
+                                <span><button onclick="cancelInfo()" class="swap normal_text">
+                                        <img src="edit.png" alt="edit-icon" style="width: 15px; ">
+                                        Quay lại</button>
+                                </span>
+                            </h3>
+                        </div>
+
+                        <div class="save_button">
+                            <div class="button_col-3">
+                                <button onclick="saveInfo()">OK</button>
+                            </div>
+                            <div class="button_col-3">
+                                <button onclick="cancelInfo()">Cancel</button>
+                            </div>
+                            <div class="button_col-3">
+                                <button onclick="resetInfo()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                        <div>
+                            <strong class="italic_text">Tải lên ảnh đại diện:</strong>
+
+                            <input required type="file" id="edit-avatar" accept="image/*">
+                            <div>
+                                <br> <strong class="italic_text">MSSV:&emsp;</strong>
+                                <br />
+                                <input required type="text" id="edit-mssv" placeholder="20215385">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 normal_text">
+                        <strong class="italic_text">Họ và tên:</strong>
+                        <br />
+                        <input required type="text" id="edit-name" placeholder="Phùng Mạnh Hoàng">
+                        <br />
+                        <strong class="italic_text">Năm vào trường:</strong>
+                        <br />
+                        <input required type="text" id="edit-entry" placeholder="2021">
+                        <br />
+                        <strong class="italic_text">Bậc đào tạo:</strong>
+                        <br />
+                        <input required type="text" id="edit-degree" placeholder="Đại học đại trà">
+                        <br />
+                        <strong class="italic_text">Chương trình:</strong>
+                        <br />
+                        <input required type="text" id="edit-program" placeholder="Khoa học Máy tính 2021">
+                        <br />
+                        <strong class="italic_text">Khoa/Viện quản lý:</strong>
+                        <br />
+                        <input required type="text" id="edit-school"
+                            placeholder="Trường Công nghệ thông tin và Truyền thông">
+                        <br />
+                        <strong class="italic_text">Tình trạng học tập:</strong>
+                        <br />
+                        <input required type="text" id="edit-status" placeholder="Học">
+                        <br />
+                    </div>
+                    <div class="col-4 normal_text">
+                        <strong class="italic_text">Giới tính:</strong>
+                        <br />
+                        <select id="edit-gender" class="edit_warning" required>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                        <br />
+                        <strong class="italic_text">Lớp:</strong>
+                        <br />
+                        <input required type="text" id="edit-class" placeholder="Khoa học máy tính 03-K66">
+                        <br />
+                        <strong class="italic_text">Khóa học:</strong>
+                        <br />
+                        <input required type="text" id="edit-academicYear" placeholder="66">
+                        <br />
+                        <strong class="italic_text">Email:</strong>
+                        <br />
+                        <input required type="text" id="edit-mail" placeholder="hoang.pm215385@sis.hust.edu.vn">
+                        <br />
+                    </div>
+                </div>
+                <div class="row_title">
+                    <h3>THÔNG TIN HỌC TẬP</h3>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 normal_text">
+                        <strong class="italic_text">Tổng kết học kỳ:</strong>
+                        <br />
+                        <input required type="text" id="edit-semester" placeholder="20231">
+                        <br />
+                        <strong class="italic_text">Trung bình tích lũy:</strong>
+                        <br />
+                        <input required type="text" id="edit-cpa" placeholder="3.2">
+                        <br />
+                        <strong class="italic_text">Số TC nợ đăng ký:</strong>
+                        <br />
+                        <input required type="text" id="edit-debt" placeholder="0">
+                        <br />
+                    </div>
+                    <div class="col-6 normal_text">
+                        <strong class="italic_text">Số TC tích lũy:</strong>
+                        <br />
+                        <input required type="text" id="edit-pass" placeholder="82">
+                        <br />
+                        <strong class="italic_text">Trình độ sinh viên:</strong>
+                        <br />
+                        <input required type="text" id="edit-level" placeholder="3">
+                        <br />
+                        <strong class="italic_text">Mức cảnh báo:</strong>
+                        <br />
+                        <select id="edit-warning" class="edit_warning" required>
+                            <option value="M0">M0</option>
+                            <option value="M1">M1</option>
+                            <option value="M2">M2</option>
+                            <option value="M3">M3</option>
+                        </select>
+                        <br />
+                    </div>
+                </div>
+
+                <div class="row_title">
+                    <h3>THÔNG TIN CÁ NHÂN</h3>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 normal_text">
+                        <strong class="italic_text">Dân tộc:</strong>
+                        <br />
+                        <input required type="text" id="edit-ethnicity" placeholder="KINH">
+                        <br />
+                        <strong class="italic_text">Năm TN cấp 3:</strong>
+                        <br />
+                        <input required type="text" id="edit-gradYear" placeholder="2021">
+                        <br />
+                        <strong class="italic_text">Địa chỉ:</strong>
+                        <br />
+                        <input required type="text" id="edit-address"
+                            placeholder="XÃ PHẠM TRẤN, HUYỆN GIA LỘC, TỈNH HẢI DƯƠNG">
+                        <br />
+                        <strong class="italic_text">Số CMTND:</strong>
+                        <br />
+                        <input required type="text" id="edit-idNumber" placeholder="030***51">
+                        <br />
+                        <strong class="italic_text">Nơi cấp:</strong>
+                        <br />
+                        <input required type="text" id="edit-placeOfIssue" placeholder="HẢI DƯƠNG">
+                        <br />
+                        <strong class="italic_text">Họ tên bố:</strong>
+                        <br />
+                        <input required type="text" id="edit-fatherName" placeholder="PHÙNG DANH ÂU">
+                        <br />
+                        <strong class="italic_text">Năm sinh:</strong>
+                        <br />
+                        <input required type="text" id="edit-fatherBirthYear" placeholder="1977">
+                        <br />
+                        <strong class="italic_text">Nghề nghiệp:</strong>
+                        <br />
+                        <input required type="text" id="edit-fatherJob"
+                            placeholder="BÍ THƯ ĐẢNG ỦY, CHỦ TỊCH HỘI ĐỒNG NHÂN DÂN XÃ">
+                        <br />
+                        <strong class="italic_text">Điện thoại:</strong>
+                        <br />
+                        <input required type="text" id="edit-fatherPhone" placeholder="098***59">
+                        <br />
+                        <strong class="italic_text">Email:</strong>
+                        <br />
+                        <input required type="text" id="edit-fatherEmail" placeholder="PH*@*IL.COM">
+                        <br />
+                    </div>
+
+                    <div class="col-6 normal_text">
+                        <strong class="italic_text">Tôn giáo:</strong>
+                        <br />
+                        <input required type="text" id="edit-religion" placeholder="KHÔNG">
+                        <br />
+                        <strong class="italic_text">Trường THPT:</strong>
+                        <br />
+                        <input required type="text" id="edit-highschool" placeholder="ĐOÀN THƯỢNG - HẢI DƯƠNG">
+                        <br />
+                        <strong class="italic_text">Hộ khẩu:</strong>
+                        <br />
+                        <input required type="text" id="edit-residence"
+                            placeholder="XÃ PHẠM TRẤN, HUYỆN GIA LỘC, TỈNH HẢI DƯƠNG">
+                        <br />
+                        <strong class="italic_text">Số Điện thoại:</strong>
+                        <br />
+                        <input required type="text" id="edit-phone" placeholder="086***02">
+                        <br />
+                        <strong class="italic_text">Họ tên mẹ:</strong>
+                        <br />
+                        <input required type="text" id="edit-motherName" placeholder="HOÀNG THỊ QUYÊN">
+                        <br />
+                        <strong class="italic_text">Năm sinh:</strong>
+                        <br />
+                        <input required type="text" id="edit-motherBirthYear" placeholder="1980">
+                        <br />
+                        <strong class="italic_text">Nghề nghiệp:</strong>
+                        <br />
+                        <input required type="text" id="edit-motherJob" placeholder="CÔNG NHÂN">
+                        <br />
+                        <strong class="italic_text">Điện thoại:</strong>
+                        <br />
+                        <input required type="text" id="edit-motherPhone" placeholder="097***02">
+                        <br />
+                        <strong class="italic_text">Email:</strong>
+                        <br />
+                        <input required type="text" id="edit-motherEmail" placeholder="KHÔNG CÓ">
+                        <br />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

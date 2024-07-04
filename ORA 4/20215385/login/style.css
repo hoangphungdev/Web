@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin     : 0;
+    padding    : 0;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding         : 20px;
+    text-align      : center;
+}
+
+nav {
+    background-color: #333;
+    color           : #fff;
+    padding         : 20px;
+    text-align      : center;
+}
+
+nav ul {
+    list-style: none;
+    margin    : 0;
+    padding   : 0;
+}
+
+nav li {
+    display     : inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    color          : #fff;
+    text-decoration: none;
+}
+
+main {
+    display       : flex;
+    flex-direction: row;
+}
+
+section {
+    flex   : 1;
+    padding: 20px;
+}
+
+#inbox {
+    background-color: #f7f7f7;
+}
+
+#compose {
+    background-color: #fff;
+}
+
+#email-list {
+    list-style: none;
+    padding   : 0;
+    margin    : 0;
+}
+
+#email-list li {
+    padding      : 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+#email-list li:hover {
+    background-color: #f0f0f0;
+}
+
+#compose-form {
+    display       : flex;
+    flex-direction: column;
+}
+
+#compose-form input,
+#compose-form textarea {
+    width        : 100%;
+    padding      : 10px;
+    margin-bottom: 20px;
+}
+
+#compose-form button[type="submit"] {
+    background-color: #4CAF50;
+    color           : #fff;
+    padding         : 10px 20px;
+    border          : none;
+    border-radius   : 5px;
+    cursor          : pointer;
+}
+
+#compose-form button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
